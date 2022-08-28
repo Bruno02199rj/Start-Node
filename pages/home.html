@@ -16,15 +16,18 @@
 
         <%- include('partials/header.html') %>
 
+
+
         <section class="noticia-destaque">
             <div class="center">
                 <div class="img-destaque">
                     <div class="overlay-destaque"></div>
                     <div class="title-destaque-descricao">
-                        <h2>Quer Fugir das Praias de Verão?</h2>
-                        <p>Donec consectetur libero eget bibendum ullamcorper. Quisque auctor nulla eu enim ultrices laoreet. Nam eget neque odio. Sed vehicula imperdiet diam, a lacinia dui dictum a. In hac habitasse platea dictumst. Sed dapibus tellus ac turpis elementum, in sollicitudin lacus vehicula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla nisl nibh, porttitor ut magna sed, sollicitudin vulputate lectus. Donec euismod a lectus non feugiat. Suspendisse vitae magna sit amet tortor ultricies ornare. Morbi sollicitudin massa jl</p>
+                        <a id="slug" href="<%= posts[0].slug %>"><h2><%= posts[0].titulo %></h2></a>
+                        <p><%- posts[0].descricaoCurta%>... </p>
+     
                     </div>
-                    <img src="/public/images/landscape.jpg" />
+                    <img src="<%= posts[0].imagem %>" />
                 </div>
             </div>
         </section>
@@ -34,60 +37,33 @@
                 <h2>Últimas Notícias</h2>
                 <div class="center">
                     <div class="ultimas">
+
+                        <% for(let i = 1; i < posts.length; i++){ %>
+                       
                         <div class="box-ultima-single">
-                            <img src="public/images/noticia.jpg">
+                            <img src="<%= posts[i].imagem %>">
                             <div class="conteudo-noticia-single">
-                                <h3>Natureza e Geral</h3>
-                                <h2>Como encarar o surf</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quia culpa aliquid fugiat placeat, sunt asperiores ducimus quod quae corporis iste, sapiente laboriosam saepe quos impedit, ut nesciunt. Quae, ad!</p>
-                                <a href="/encarar-o-surf">Saiba Mais</a>
+                                <h3><%= posts[i].categoria %></h3>
+                                <h2><%= posts[i].titulo %></h2>
+                                <p><%- posts[i].descricaoCurta %></p>
+                                <a href="<%= posts[i].slug%>">Saiba Mais</a>
                             </div>
                         </div>
-                        <div class="box-ultima-single">
-                            <img src="public/images/noticia.jpg">
-                            <div class="conteudo-noticia-single">
-                                <h3>Natureza e Geral</h3>
-                                <h2>Como encarar o surf</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quia culpa aliquid fugiat placeat, sunt asperiores ducimus quod quae corporis iste, sapiente laboriosam saepe quos impedit, ut nesciunt. Quae, ad!</p>
-                                <a href="/encarar-o-surf">Saiba Mais</a>
-                            </div>
-                        </div>
+                      <% } %>
                     </div>
                         <div class="mais-lidas">
                             <h3>mais lidas</h3>
                             <div class="mais-lidas-noticias">
+                                <% for(let i = 0; i < postsTop.length; i++){ %>
                                 <div class="mais-lida-noticia-single">
-                                    <img src="/public/images/natureza.jpg">
+                                    <img src="<%= postsTop[i].imagem %>"/>
                                     <div class="texto-mais-lida-single">
-                                        <h4>Natureza</h4>
-                                        <p>  necessitatibus possimus aut maxime, quibusdam vitae? Quibusdam!</p>
-                                        <a href="/encarar-o-surf">Saiba Mais</a>
+                                        <h4><%= postsTop[i].titulo %></h4>
+                                        <p> <%- postsTop[i].descricaoCurta %> {<span style="font-size: 12px;font-weight: bold;"><%= postsTop[i].views %></span>}</p>
+                                        <a href="<%= postsTop[i].slug %>">Saiba Mais</a>
                                     </div>
                                 </div>
-                                <div class="mais-lida-noticia-single">
-                                    <img src="/public/images/natureza.jpg">
-                                    <div class="texto-mais-lida-single">
-                                        <h4>Natureza</h4>
-                                        <p>  necessitatibus possimus aut maxime, quibusdam vitae? Quibusdam!</p>
-                                        <a href="/encarar-o-surf">Saiba Mais</a>
-                                    </div>
-                                </div>
-                                <div class="mais-lida-noticia-single">
-                                    <img src="/public/images/natureza.jpg">
-                                    <div class="texto-mais-lida-single">
-                                        <h4>Natureza</h4>
-                                        <p>  necessitatibus possimus aut maxime, quibusdam vitae? Quibusdam!</p>
-                                        <a href="/encarar-o-surf">Saiba Mais</a>
-                                    </div>
-                                </div>
-                                <div class="mais-lida-noticia-single">
-                                    <img src="/public/images/natureza.jpg">
-                                    <div class="texto-mais-lida-single">
-                                        <h4>Natureza</h4>
-                                        <p>  necessitatibus possimus aut maxime, quibusdam vitae? Quibusdam!</p>
-                                        <a href="/encarar-o-surf">Saiba Mais</a>
-                                    </div>
-                                </div>
+                                <% } %>
                                 
                             </div>
                         </div>
