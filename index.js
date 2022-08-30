@@ -80,7 +80,7 @@ app.get('/',(req,res)=>{
 
 
 app.get('/:slug',(req,res)=>{
-
+       
        Posts.findOneAndUpdate({slug: req.params.slug}, {$inc : {views : 1}}, {new: true},(err, resposta)=>{
         if(resposta != null){
             
@@ -120,24 +120,27 @@ app.post('/admin/login', (req,res)=>{
         req.session.login = "Bruno";
        
     }
+
    })
 
    res.redirect('/admin/login');
 })
 
-app.post('/admin/cadastro',(req,res)=>{
+app.post('/admin/cadastro', (req,res)=>{
     //inserir no banco de dados
     Posts.create({
         titulo: req.body.titulo_noticia,
-        imagem: req.body.url_imagem,
-        categoria: 'nenhuma',
+        imagem: req.body.url_image,
+        categoria: req.body.categoria,
         conteudo: req.body.noticia,
         slug: req.body.slug,
-        autor: "admin",
-        views: 0,
+        autor: "Admin",
+        views: 0
     });
-    
-    res.redirect('/admin/login');
+
+    res.send('cadastrado com sucesso ');
+    console.log(req.body)
+
 })
 
 app.get('/admin/deletar/:id', (req,res)=>{
