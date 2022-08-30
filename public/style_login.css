@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clear{
+    clear: both;
+}
+
+body{
+    background-color: #ccc;
+}
+
+
+.form_login{
+    border: none;
+    text-align: center;
+    margin: auto;
+    margin-top: 150px;
+    width: 26%;
+    height: 350px;
+    background: #fff;
+    border-radius: 45px;
+}
+
+
+
+.form_login input[type=text]{
+    width: 200px;
+    border: none;
+
+    position: relative;
+    
+    margin-top: 80px;
+}
+
+.border1{
+    position: relative;
+    left: 75px;
+    margin-top: 2px;
+    width: 200px;
+    height: 2px;
+    background: rgb(0,212,255);
+    background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 35%, rgba(226,0,255,1) 100%);
+}
+
+
+
+.form_login input[type=password]{
+
+    border: none;
+    margin-top: 35px;
+    width: 200px;
+}
+.form_login input[type=text],[type=password]:focus{
+box-shadow: 0,0,0,0;
+outline: 0;
+}
+.form_login input[type=submit]{
+    margin-top: 70px;
+    border: none;
+    height: 50px;
+    width: 200px;
+    color: white;
+    background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 35%, rgba(226,0,255,1) 100%);
+    border-radius: 120px;
+}

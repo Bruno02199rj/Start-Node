@@ -8,6 +8,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
         <link href="/public/style.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Montserrat:ital,wght@0,700;1,200&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     </head>
 
@@ -24,7 +27,9 @@
                     <div class="overlay-destaque"></div>
                     <div class="title-slug" href="<%= posts[0].slug %>">
                         <h2><%= posts[0].titulo %></h2>
-                         <a>dsadsad</a>
+                       <br>
+                       <br>
+                         <a><%=posts[0].categoria%></a>
                         <p><%- posts[0].descricaoCurta%>... </p>
      
                     </div>
